@@ -75,47 +75,4 @@ public class HopitalServices implements IHopitalServices{
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void createConsultation(Admin c) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Admin getConsultation(String code) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<Admin> getAllConsultation() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void addMedicament(Secretaire m) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Admin getMedicamentLibelle(String libelle) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Admin getMedicamentCode(String code) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<Admin> getAllMedicament() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

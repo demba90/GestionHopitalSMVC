@@ -22,14 +22,4 @@ public interface IHopitalServices {
 	public void updatePatient(Patient p);
 	public void deletePatient(Patient p);
 	
-	//CR Consultation
-	public void createConsultation(Admin c);
-	public Admin getConsultation(String code);
-	public ArrayList<Admin> getAllConsultation();
-	
-	//CR Medicament 
-	public void addMedicament(Secretaire m);
-	public Admin getMedicamentLibelle(String libelle);
-	public Admin getMedicamentCode(String code);
-	public ArrayList<Admin> getAllMedicament();
 }
