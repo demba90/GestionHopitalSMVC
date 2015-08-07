@@ -3,7 +3,7 @@ package dic2.ial.gestionhopital.modele;
 import java.io.Serializable;
 
 public class Medecin implements Serializable {
-	private String matricule;
+	private int matricule;
 	private String nom;
 	private String prenom;
 	private String specialite;
@@ -12,7 +12,7 @@ public class Medecin implements Serializable {
 		super();
 	}
 	
-	public Medecin(String matricule, String nom, String prenom,
+	public Medecin(int matricule, String nom, String prenom,
 			String specialite) {
 		super();
 		this.matricule = matricule;
@@ -20,10 +20,10 @@ public class Medecin implements Serializable {
 		this.prenom = prenom;
 		this.specialite = specialite;
 	}
-	public String getMatricule() {
+	public int getMatricule() {
 		return matricule;
 	}
-	public void setMatricule(String matricule) {
+	public void setMatricule(int matricule) {
 		this.matricule = matricule;
 	}
 	public String getNom() {

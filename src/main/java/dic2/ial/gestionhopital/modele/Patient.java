@@ -3,7 +3,7 @@ package dic2.ial.gestionhopital.modele;
 import java.io.Serializable;
 
 public class Patient implements Serializable {
-	private String code;
+	private int code;
 	private String nom;
 	private String prenom;
 	private String pato;
@@ -12,16 +12,16 @@ public class Patient implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Patient(String code, String nom, String prenom) {
+	public Patient(int code, String nom, String prenom) {
 		super();
 		this.code = code;
 		this.nom = nom;
 		this.prenom = prenom;
 	}
-	public String getCode() {
+	public int getCode() {
 		return code;
 	}
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 	public String getNom() {

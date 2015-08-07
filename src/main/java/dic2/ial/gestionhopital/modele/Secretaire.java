@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Secretaire implements Serializable{
 	
-	private String code ;
+	private int code ;
 	private String nom;
 	private String prenom;
 	
@@ -12,10 +12,10 @@ public class Secretaire implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public String getCode() {
+	public int getCode() {
 		return code;
 	}
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 	public String getNom() {

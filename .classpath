@@ -25,5 +25,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/thiam/workspace-j2ee/GestionHopitalSMVC/src/main/webapp/resources/lib/mysql-connector-java-5.1.29-bin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
