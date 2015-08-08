@@ -1,6 +1,8 @@
 package dic2.ial.gestionhopital.dao;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import dic2.ial.gestionhopital.modele.User;
 import dic2.ial.gestionhopital.modele.Medecin;
@@ -9,11 +11,16 @@ import dic2.ial.gestionhopital.modele.Patient;
 
 public interface IHopitalDao {
 	//CRUD mdecin
-	public void addMedecin(Medecin m);
+	public void saveMedecin( Medecin valueObject) throws  SQLException;
 	public Medecin getMedecin(int mat);
-	public ArrayList<Medecin> getAllMedecin();
 	public void updateMedecin(Medecin m);
-	public void deleteMedecin(Medecin m);
+	public Medecin getObjectMedecin( int matricule) throws   SQLException;
+	public List loadAllMedecin( ) throws SQLException;
+	public void createMedecin(Medecin valueObject) throws SQLException;
+	public void deleteMedecin(  Medecin valueObject) throws  SQLException;
+	public void deleteAllMedecin() throws SQLException ;
+	public int countAllMedecin() throws SQLException ;
+	 public List searchMatchingMedecin(Medecin valueObject) throws SQLException;
 	
 	//CRUD secretaire
 	public void addSecretaire(Secretaire s);
