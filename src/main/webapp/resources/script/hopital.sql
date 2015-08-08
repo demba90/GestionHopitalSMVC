@@ -6,28 +6,18 @@ CREATE SCHEMA IF NOT EXISTS `hopital` DEFAULT CHARACTER SET utf8 COLLATE utf8_ge
 USE `hopital` ;
 
 -- -----------------------------------------------------
--- Table `hopital`.`user`
+-- Table `hopital`.`medecin`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `hopital`.`user` (
-  `iduser` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `hopital`.`medecin` (
+  `id` INT NOT NULL,
   `prenom` VARCHAR(45) NULL,
   `nom` VARCHAR(45) NULL,
   `username` VARCHAR(45) NULL,
   `password` VARCHAR(45) NULL,
-  `profil` VARCHAR(45) NULL,
-  PRIMARY KEY (`iduser`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `hopital`.`medecin`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `hopital`.`medecin` (
-  `matricule` INT NOT NULL AUTO_INCREMENT,
+  `matricule` INT NOT NULL,
   `specialite` VARCHAR(45) NULL,
   `user_iduser` INT NOT NULL,
-  PRIMARY KEY (`matricule`),
-  INDEX `fk_medecin_user1_idx` (`user_iduser` ASC))
+  PRIMARY KEY (`id`, `matricule`))
 ENGINE = MyISAM;
 
 
@@ -63,9 +53,12 @@ ENGINE = MyISAM;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hopital`.`secretaire` (
   `idsecretaire` INT NOT NULL AUTO_INCREMENT,
-  `user_iduser` INT NOT NULL,
-  PRIMARY KEY (`idsecretaire`),
-  INDEX `fk_secretaire_user1_idx` (`user_iduser` ASC))
+  `prenom` VARCHAR(45) NULL,
+  `nom` VARCHAR(45) NULL,
+  `username` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `profil` VARCHAR(45) NULL,
+  PRIMARY KEY (`idsecretaire`))
 ENGINE = MyISAM;
 
 

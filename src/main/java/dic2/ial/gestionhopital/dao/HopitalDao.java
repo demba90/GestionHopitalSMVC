@@ -37,12 +37,14 @@ public class HopitalDao implements IHopitalDao{
 	
 	@Override
 	public void addMedecin(Medecin m) {
+		addAdmin((User)m);
 		try
 		{
 			stmt = cnx.prepareStatement("INSERT INTO `medecin`(`specialite`, `user_iduser`) VALUES (?,?) ") ;
-			stmt.setString(1, age.getNomag()) ;
-			stmt.setString(2, age.getAdresseag()) ;
-			rowsaffected = stmt.executeUpdate();
+			stmt.setString(1, m.getSpecialite()) ;
+			stmt.setString(2, ((User)m).get) ;
+			int rowsaffected = stmt.executeUpdate();
+	
 			if(rowsaffected > 0)
 				res = true ;
 		}
