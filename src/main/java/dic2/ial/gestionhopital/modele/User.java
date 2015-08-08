@@ -2,14 +2,14 @@ package dic2.ial.gestionhopital.modele;
 
 import java.io.Serializable;
 
-public class Admin implements Serializable{
+public class User implements Serializable{
 	private String nom;
 	private String prenom;
 	private String username;
 	private String password;
 	private String profil;
 	
-	public Admin() {
+	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

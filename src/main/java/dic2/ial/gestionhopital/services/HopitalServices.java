@@ -3,9 +3,9 @@ package dic2.ial.gestionhopital.services;
 import java.util.ArrayList;
 
 import dic2.ial.gestionhopital.dao.IHopitalDao;
-import dic2.ial.gestionhopital.modele.Admin;
-import dic2.ial.gestionhopital.modele.Medecin;
 import dic2.ial.gestionhopital.modele.Secretaire;
+import dic2.ial.gestionhopital.modele.User;
+import dic2.ial.gestionhopital.modele.Medecin;
 import dic2.ial.gestionhopital.modele.Patient;
 
 public class HopitalServices implements IHopitalServices{
@@ -18,61 +18,95 @@ public class HopitalServices implements IHopitalServices{
 	
 	@Override
 	public void addMedecin(Medecin m) {
-		// TODO Auto-generated method stub
-		
+		dao.addMedecin(m); 
 	}
 
 	@Override
-	public Medecin getMedecin(String mat) {
-		// TODO Auto-generated method stub
-		return null;
+	public Medecin getMedecin(int mat) {
+		return dao.getMedecin(mat);
 	}
 
 	@Override
 	public ArrayList<Medecin> getAllMedecin() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getAllMedecin();
 	}
 
 	@Override
 	public void updateMedecin(Medecin m) {
-		// TODO Auto-generated method stub
-		
+		dao.updateMedecin(m);
 	}
 
 	@Override
 	public void deleteMedecin(Medecin m) {
-		// TODO Auto-generated method stub
+		dao.deleteMedecin(m);
 		
 	}
 
 	@Override
 	public void addPatient(Patient p) {
-		// TODO Auto-generated method stub
+		dao.addPatient(p);
 		
-	}
-
-	@Override
-	public Patient getPatient(String code) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
 	public ArrayList<Patient> getAllPatient() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getAllPatient();
 	}
 
 	@Override
 	public void updatePatient(Patient p) {
-		// TODO Auto-generated method stub
-		
+		dao.updatePatient(p);
 	}
 
 	@Override
 	public void deletePatient(Patient p) {
-		// TODO Auto-generated method stub
+		dao.updatePatient(p);
+	}
+
+	@Override
+	public void addRendezVous(Patient p, Medecin m) {
+		dao.addRendezVous(p, m);
+	}
+
+	@Override
+	public void addAdmin(User user) {
+		dao.addAdmin(user);
+	}
+
+	@Override
+	public boolean authentification(User user) {
+		return dao.authentification(user);
+	}
+
+	@Override
+	public void addSecretaire(Secretaire s) {
+		dao.addSecretaire(s);
 		
+	}
+
+	@Override
+	public Medecin getSecretaire(int code) {
+		return dao.getSecretaire(code);
+	}
+
+	@Override
+	public ArrayList<Secretaire> getAllSecretaire() {
+		return dao.getAllSecretaire();
+	}
+
+	@Override
+	public void updateSecretaire(Secretaire m) {
+		dao.updateSecretaire(m);
+		
+	}
+
+	@Override
+	public void deleteSecretaire(Secretaire s) {
+		dao.deleteSecretaire(s);
+	}
+
+	@Override
+	public Patient getPatient(int code) {
+		return dao.getPatient(code);
 	}
 }

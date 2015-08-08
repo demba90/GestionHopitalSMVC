@@ -23,7 +23,7 @@ ENGINE = InnoDB;
 -- Table `hopital`.`medecin`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hopital`.`medecin` (
-  `matricule` INT NOT NULL,
+  `matricule` INT NOT NULL AUTO_INCREMENT,
   `specialite` VARCHAR(45) NULL,
   `user_iduser` INT NOT NULL,
   PRIMARY KEY (`matricule`),
@@ -35,7 +35,7 @@ ENGINE = MyISAM;
 -- Table `hopital`.`patient`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hopital`.`patient` (
-  `idpatient` INT NOT NULL,
+  `idpatient` INT NOT NULL AUTO_INCREMENT,
   `prenom` VARCHAR(45) NULL,
   `nom` VARCHAR(45) NULL,
   `pato` VARCHAR(45) NULL,
@@ -47,7 +47,7 @@ ENGINE = MyISAM;
 -- Table `hopital`.`rendezvous`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hopital`.`rendezvous` (
-  `idrendezvous` INT NOT NULL,
+  `idrendezvous` INT NOT NULL AUTO_INCREMENT,
   `jour` VARCHAR(45) NULL,
   `heure` VARCHAR(45) NULL,
   `medecin_matricule` INT NOT NULL,
@@ -62,7 +62,7 @@ ENGINE = MyISAM;
 -- Table `hopital`.`secretaire`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hopital`.`secretaire` (
-  `idsecretaire` INT NOT NULL,
+  `idsecretaire` INT NOT NULL AUTO_INCREMENT,
   `user_iduser` INT NOT NULL,
   PRIMARY KEY (`idsecretaire`),
   INDEX `fk_secretaire_user1_idx` (`user_iduser` ASC))
