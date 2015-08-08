@@ -37,11 +37,9 @@ public class HopitalDao implements IHopitalDao{
 	
 	@Override
 	public void addMedecin(Medecin m) {
-		boolean res = false;
-		int rowsaffected = 0 ;
 		try
 		{
-			stmt = cnx.prepareStatement("insert into agence(nomag,adresseag) values (?,?) ") ;
+			stmt = cnx.prepareStatement("INSERT INTO `medecin`(`specialite`, `user_iduser`) VALUES (?,?) ") ;
 			stmt.setString(1, age.getNomag()) ;
 			stmt.setString(2, age.getAdresseag()) ;
 			rowsaffected = stmt.executeUpdate();
@@ -52,8 +50,6 @@ public class HopitalDao implements IHopitalDao{
 		{
 			e.getMessage() ;
 		}
-		return res ;
-		
 	}
 
 	@Override
