@@ -9,15 +9,13 @@ USE `hopital` ;
 -- Table `hopital`.`medecin`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hopital`.`medecin` (
-  `id` INT NOT NULL,
+  `matricule` INT NOT NULL AUTO_INCREMENT,
   `prenom` VARCHAR(45) NULL,
   `nom` VARCHAR(45) NULL,
   `username` VARCHAR(45) NULL,
   `password` VARCHAR(45) NULL,
-  `matricule` INT NOT NULL,
   `specialite` VARCHAR(45) NULL,
-  `user_iduser` INT NOT NULL,
-  PRIMARY KEY (`id`, `matricule`))
+  PRIMARY KEY (`matricule`))
 ENGINE = MyISAM;
 
 
