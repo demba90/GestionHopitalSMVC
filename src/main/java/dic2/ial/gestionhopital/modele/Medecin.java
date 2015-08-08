@@ -2,7 +2,7 @@ package dic2.ial.gestionhopital.modele;
 
 import java.io.Serializable;
 
-public class Medecin extends User  implements Serializable {
+public class Medecin implements Serializable {
 	private int matricule;
 	private String nom;
 	private String prenom;

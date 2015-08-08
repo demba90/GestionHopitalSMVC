@@ -26,5 +26,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/thiam/workspace-j2ee/GestionHopitalSMVC/src/main/webapp/resources/lib/mysql-connector-java-5.1.29-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thiam/workspace-j2ee/GestionHopitalSMVC/src/main/webapp/resources/lib/org.springframework.jdbc-sources-3.2.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/thiam/workspace-j2ee/GestionHopitalSMVC/src/main/webapp/resources/lib/org.springframework.jdbc-3.2.5.RELEASE.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -67,7 +67,10 @@ CREATE TABLE IF NOT EXISTS `hopital`.`diagnostique` (
   `resultat` VARCHAR(45) NULL,
   `etat` VARCHAR(45) NULL,
   `rendezvous_idrendezvous` INT NOT NULL,
-  INDEX `fk_diagnostique_rendezvous1_idx` (`rendezvous_idrendezvous` ASC))
+  `iddiagnostique` INT NULL,
+  `diagnostiquecol` INT NOT NULL AUTO_INCREMENT,
+  INDEX `fk_diagnostique_rendezvous1_idx` (`rendezvous_idrendezvous` ASC),
+  PRIMARY KEY (`diagnostiquecol`))
 ENGINE = MyISAM;
 
 
