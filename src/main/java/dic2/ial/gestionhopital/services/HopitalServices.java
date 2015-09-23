@@ -1,5 +1,11 @@
 package dic2.ial.gestionhopital.services;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.RMISecurityManager;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +17,25 @@ import dic2.ial.gestionhopital.modele.RendezVous;
 import dic2.ial.gestionhopital.modele.Secretaire;
 import dic2.ial.gestionhopital.modele.Medecin;
 
-public class HopitalServices implements IHopitalServices{
+public class HopitalServices extends UnicastRemoteObject implements IHopitalServices{
+
 	private IHopitalDao dao;
+	
+	protected HopitalServices() throws RemoteException, MalformedURLException {
+		super();
+		init();
+	}
+	
+	public void init() throws RemoteException, MalformedURLException{
+		System.setSecurityManager(new RMISecurityManager());
+	     //cette précédente instruction est obligatoire dans la méthode main du serveur
+	     //car elle permet au serveur de communiquer avec la client 
+	     //elle permet à la machine virtuelle de faire la concession
+		HopitalServices s = new HopitalServices(); 
+	      //Serveur s = new Serveur();  obligatoire aussi
+	      LocateRegistry.createRegistry(1099); //création de l'annuraire disponible dans le port 1099
+	      Naming.rebind("rmi://localhost:1099/BK",s);
+	}
 	
 	//setters pour l'injection des dépendances 
 	public void setDao(IHopitalDao dao) {

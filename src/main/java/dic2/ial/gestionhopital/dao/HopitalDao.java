@@ -8,15 +8,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
 import dic2.ial.gestionhopital.modele.Diagnostique;
 import dic2.ial.gestionhopital.modele.Medecin;
 import dic2.ial.gestionhopital.modele.Patient;
 import dic2.ial.gestionhopital.modele.RendezVous;
 import dic2.ial.gestionhopital.modele.Secretaire;
 
-import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
-public class HopitalDao implements IHopitalDao{
+public class HopitalDao extends JdbcDaoSupport implements IHopitalDao{
 	
 	private Connection cnx = null ;
     private PreparedStatement stmt = null ;
@@ -28,7 +29,7 @@ public class HopitalDao implements IHopitalDao{
         try
 		{
 			//chargement du pilote
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			//connexion à  la base de données
 			cnx = DriverManager.getConnection ("jdbc:mysql://localhost/hopital","root","") ;
                         //creation d'une connexion
@@ -40,22 +41,26 @@ public class HopitalDao implements IHopitalDao{
 		}
     }
     
-    public void getCnx(){
+    public void inti(){
     	//chargement du pilote
-		try {
-			Class.forName("com.mysql.jdbc.Driver") ;
+    	try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//connexion à  la base de données
-		try {
+    	try {
 			cnx = DriverManager.getConnection ("jdbc:mysql://localhost/hopital","root","") ;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-                    //creation d'une connexion
     }
     
     public Medecin getObjectMedecin( int matricule) throws   SQLException {
@@ -87,7 +92,6 @@ public class HopitalDao implements IHopitalDao{
 
 
   public List loadAllMedecin( ) throws SQLException {
-	  	getCnx();
         String sql = "SELECT * FROM Medecin ORDER BY matricule ASC ";
         List searchResults = listQueryMedecin(cnx.prepareStatement(sql));
         return searchResults;

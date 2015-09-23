@@ -14,7 +14,7 @@ public class HopitalController {
 	@Autowired
 	private IHopitalServices services ;
 	
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/" )
 	public String slash(){
 		return "index";
 	}
@@ -30,6 +30,7 @@ public class HopitalController {
 	@RequestMapping(value = "/medecin")
 	public String medecin(Model model){
 		try {
+			
 			model.addAttribute("medecins",services.loadAllMedecin());
 			return "medecin";
 		} catch (SQLException e) {
